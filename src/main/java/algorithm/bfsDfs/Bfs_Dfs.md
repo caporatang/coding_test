@@ -14,7 +14,80 @@ DFS는 깊이를 우선 탐색한다. 같은 레벨이 아니라 바로 아래 �
   - 실행순서 : 0 -> 1 -> 3 -> 4 -> 2 -> 5 -> 6 
 
  
+## 자바로 구현
+BFS는 Queue, DFS는 Stack으로 구현한다.  
+코드는 거의 유사하지만, 다른점은 DFS는 시작 노드를 방문한 노드를 표시하는 Visited에 추가하지 않는다.  
+추가하지 않는 이유는 중복된 노드를 처리하지 않기 때문인데, BFS는 큐에 넣을 때 방문 처리를 하게되고, DFS는 stack에서 꺼낼 때 방문 여부를 확인하는 구조적인 차이가 있기 때문이다.  
+(Queue: FIFO, Stack: LIFO)
 
+````java
+public class BfsDfsSearch {
+    public static void main(String[] args) {
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+        graph.put(0, Arrays.asList(1, 2));
+        graph.put(1, Arrays.asList(3, 4));
+        graph.put(2, Arrays.asList(5, 6));
+        graph.put(3, new ArrayList<>());
+        graph.put(4, new ArrayList<>());
+        graph.put(5, new ArrayList<>());
+        graph.put(6, new ArrayList<>());
+
+        System.out.println("BFS 탐색 결과:");
+        bfs(graph, 0);
+
+        System.out.println("DFS 탐색 결과:");
+        dfs(graph, 0);
+    }
+
+    // BFS 구현
+    public static void bfs(Map<Integer, List<Integer>> graph, int startNode) {
+        Queue<Integer> queue = new LinkedList<>();
+        Set<Integer> visited = new HashSet<>();
+
+        queue.add(startNode);
+        visited.add(startNode);
+
+        while (!queue.isEmpty()) {
+            int currentNode = queue.poll();
+            System.out.print(currentNode + " ");
+
+            // 인접 노드
+            for (int neighbor : graph.get(currentNode)) {
+                if (!visited.contains(neighbor)) {
+                    queue.add(neighbor);
+                    visited.add(neighbor);
+                }
+            }
+        }
+    }
+
+    // DFS 구현
+    public static void dfs(Map<Integer, List<Integer>> graph, int startNode) {
+        Stack<Integer> stack = new Stack<>();
+        Set<Integer> visited = new HashSet<>();
+
+        stack.push(startNode);
+
+        while (!stack.isEmpty()) {
+            int currentNode = stack.pop();
+
+            if (!visited.contains(currentNode)) {
+                visited.add(currentNode);
+                System.out.print(currentNode + " ");
+
+                // 인접 노드를 역순으로 스택에 추가
+                List<Integer> neighbors = graph.get(currentNode);
+                Collections.reverse(neighbors);
+                for (int neighbor : neighbors) {
+                    if (!visited.contains(neighbor)) {
+                        stack.push(neighbor);
+                    }
+                }
+            }
+        }
+    }
+}
+````
 
   
 

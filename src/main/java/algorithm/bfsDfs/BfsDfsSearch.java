@@ -13,7 +13,7 @@ import java.util.*;
  * -------------------------------------------------------
  * 2024. 11. 30.        taeil                   최초생성
  */
-public class BfsSearch {
+public class BfsDfsSearch {
     public static void main(String[] args) {
         Map<Integer, List<Integer>> graph = new HashMap<>();
         graph.put(0, Arrays.asList(1, 2));
