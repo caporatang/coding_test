@@ -64,7 +64,7 @@ public class 연산자_끼워넣기_V2 {
         if (operator==1) return operand1 + operand2;
         if (operator==2) return operand1 - operand2;
         if (operator==3) return operand1 * operand2;
-        if (operator==4) return operand1 / operand2;
+        else return operand1 / operand2;
     }
 
     public static void main(String[] args) {
