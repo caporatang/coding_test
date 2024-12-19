@@ -24,22 +24,37 @@ import java.util.Arrays;
 2) 입력은 피보나치 수열의 총 항의 수 이다. 만약 7이 입력되면 1 1 2 3 5 8 13을 출력하면 된다.
 * */
 public class 피보나치_수열 {
-    public static int[] solution(int n) {
-        int[] arr = new int[n];
-        arr[0]=1;
-        arr[1]=1;
+    public static void solution(int n) {
+        // 배열 안쓰고 변수 세개로 구현
+        int a=1, b=1, c;
+        System.out.print(a+ " " + b + " ");
+
         for(int i=2; i<n; i++) {
-            arr[i] = arr[i-1]+arr[i-2];
+            c=a+b;
+            System.out.print(c+" ");
+            a=b;
+            b=c;
         }
-        return arr;
     }
+
+
+    //public static int[] solution(int n) {
+    //    int[] arr = new int[n];
+    //    arr[0]=1;
+    //    arr[1]=1;
+    //    for(int i=2; i<n; i++) {
+    //        arr[i] = arr[i-1]+arr[i-2];
+    //    }
+    //    return arr;
+    //}
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String n = br.readLine();
-        int[] answer = solution(Integer.parseInt(n));
-        for(int i=0; i<answer.length; i++) {
-            System.out.print(answer[i] + " ");
-        }
+        solution(Integer.parseInt(n));
+//        int[] answer = solution(Integer.parseInt(n));
+//        for(int i=0; i<answer.length; i++) {
+//            System.out.print(answer[i] + " ");
+//        }
     }
 }
