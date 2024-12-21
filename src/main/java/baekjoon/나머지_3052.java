@@ -22,7 +22,7 @@ public class 나머지_3052 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int[] arr= new int[10];
-        for (int i = 0; i <9; i++) {
+        for (int i = 0; i <10; i++) {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
