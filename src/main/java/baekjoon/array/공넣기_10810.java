@@ -1,7 +1,6 @@
-package baekjoon;
+package baekjoon.array;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 /**
