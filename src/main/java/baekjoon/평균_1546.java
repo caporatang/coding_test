@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * packageName : baekjoon
@@ -34,5 +35,26 @@ public class 평균_1546 {
         }
         double result = answer/n;
         System.out.println(result);
+
+        // 스트림 사용
+        // ==========================================================
+        Scanner sc = new Scanner(System.in);
+
+        int n2 = sc.nextInt();
+        double[] scores2 = new double[n2];
+
+        for (int i = 0; i < n2; i++) {
+            scores2[i] = sc.nextDouble();
+        }
+
+        double maxScore = Arrays.stream(scores2).max().orElse(1); // 최대값 계산 (기본값 1)
+        double normalizedAverage = Arrays.stream(scores2)
+                .map(score2 -> score2 / maxScore * 100)
+                .average()
+                .orElse(0); // 정규화 후 평균 계산
+
+        System.out.println(normalizedAverage);
+
+
     }
 }
