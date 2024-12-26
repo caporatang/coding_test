@@ -22,14 +22,18 @@ public class 약수_구하기_2501 {
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
         int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
 
-        int[] arr = new int[n+1];
-        for (int i = 1; i<=n; i++) {
-            if(n%m==0) {
-                arr[i]=i;
+        int count = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                count++;
+                if (count == k) {
+                    System.out.println(i);
+                    return;
+                }
             }
         }
-        System.out.print(arr[m]);
+        System.out.println(0);
     }
 }
