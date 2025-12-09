@@ -1,5 +1,7 @@
 plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.9.20'
     id 'java'
+    id 'application'
 }
 
 group = 'org.example'
@@ -10,8 +12,21 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.20'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = '21'
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = '21'
+    }
 }
 
 test {
