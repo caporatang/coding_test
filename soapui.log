@@ -1,3 +1,5 @@
 2025-12-09 21:51:28,269 WARN  [DefaultSoapUICore] Missing folder [/Users/taeil/ext] for external libraries
 2025-12-09 21:51:28,354 INFO  [DefaultSoapUICore] initialized soapui-settings from [/Users/taeil/soapui-settings.xml]
 2025-12-09 21:51:28,545 INFO  [WorkspaceImpl] Loading workspace from [/Users/taeil/intellij-soapui-workspace.xml]
+2025-12-09 22:16:51,315 INFO  [WorkspaceImpl] Saved workspace to [/Users/taeil/intellij-soapui-workspace.xml]
+2025-12-09 22:16:51,316 INFO  [DefaultSoapUICore] Settings saved to [/Users/taeil/soapui-settings.xml]
