@@ -4,6 +4,6 @@ fun main() {
     println(solution("string", 3))
 }
 
-fun solution(my_string: String, k: Int): String {
+private fun solution(my_string: String, k: Int): String {
     return my_string.repeat(k)
 }

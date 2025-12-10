@@ -8,7 +8,7 @@ fun main() {
     val list: Array<String> = listOf("1","2","3").toTypedArray()
     print(solution(list))
 }
-fun solution(arr: Array<String>): String {
+private fun solution(arr: Array<String>): String {
     var answer: String = ""
 
     answer = arr.joinToString("")
